@@ -1,3 +1,5 @@
+import {createStore} from "redux";
+
 const ADD_TASK = "task/add"
 const DELETE_TASK = "task/delete"
 
@@ -25,3 +27,14 @@ const taskReducer = (state = initialState,action) =>{
             return state
     }
 }
+
+const store = createStore(taskReducer);
+console.log(store)
+
+
+store.dispatch({type:ADD_TASK,payload:"ARSF CODEING"});
+console.log(store.getState());
+store.dispatch({type:ADD_TASK,payload:"ARSF CODEING"});
+console.log(store.getState());
+store.dispatch({type:DELETE_TASK,payload:1});
+console.log(store.getState());
