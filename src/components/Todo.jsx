@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux"
-import { addToTask } from "../store";
+import { addToTask, deleteTask } from "../store";
 
 export const Todo = () => {
 
@@ -17,6 +17,10 @@ export const Todo = () => {
         e.preventDefault();
         setTask("");
         return dispatch(addToTask(task));
+    }
+
+    const handleTaskDelete = (index) =>{
+        return dispatch(deleteTask(index))
     }
 
     <div className="containet">
