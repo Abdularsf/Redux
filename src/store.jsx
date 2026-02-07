@@ -31,6 +31,12 @@ const taskReducer = (state = initialState,action) =>{
 export const store = createStore(taskReducer);
 console.log(store)
 
+const addToTask = (data) =>{
+    return {type:ADD_TASK,payload:data}
+}
+const deleteTask = (id) =>{
+    return {type:DELETE_TASK,payload:id}
+}
 
 store.dispatch(addToTask("losers"));
 console.log(store.getState());
@@ -40,10 +46,3 @@ console.log(store.getState());
 
 store.dispatch(deleteTask(1));
 console.log(store.getState());
-
-const addToTask = (data) =>{
-    return {type:ADD_TASK,payload:data}
-}
-const deleteTask = (id) =>{
-    return {type:DELETE_TASK,payload:id}
-}
