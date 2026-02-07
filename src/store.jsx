@@ -31,14 +31,16 @@ const taskReducer = (state = initialState,action) =>{
 export const store = createStore(taskReducer);
 console.log(store)
 
-const addToTask = (data) =>{
+export const addToTask = (data) =>{
     return {type:ADD_TASK,payload:data}
 }
-const deleteTask = (id) =>{
+export const deleteTask = (id) =>{
     return {type:DELETE_TASK,payload:id}
 }
 
 store.dispatch(addToTask("losers"));
+store.dispatch(addToTask("as"));
+store.dispatch(addToTask("yt"));
 console.log(store.getState());
 
 store.dispatch(addToTask("ARSF CODEING"));
