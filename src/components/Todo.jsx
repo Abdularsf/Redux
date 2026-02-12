@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux"
-import { addToTask, deleteTask } from "../store";
+import { addToTask, deleteTask, fetchTask } from "../store";
 import { applyMiddleware } from "redux";
 
 export const Todo = () => {
@@ -24,6 +24,10 @@ export const Todo = () => {
         return dispatch(deleteTask(index))
     }
 
+    const handleFetchTask = () =>{
+        return dispatch(fetchTask())
+    }
+
     <div className="containet">
         <div className="todo-app">
             <h1>
@@ -35,6 +39,9 @@ export const Todo = () => {
                     <button>Add Task</button>
                 </form>
             </div>
+
+            <button onClick={handleFetchTask}>Fetch Task</button>
+
             <ul className="list-container">
                 {
                     tasks.map((curTask, index) => {
