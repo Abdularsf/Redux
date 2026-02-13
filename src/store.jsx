@@ -28,7 +28,7 @@ const taskReducer = (state = initialState,action) =>{
         case FETCH_TASKS:
             return{
                 ...state,
-                task:[...state.task,action.payload],
+                task:[...state.task, ...action.payload],
             }
     
         default: 
